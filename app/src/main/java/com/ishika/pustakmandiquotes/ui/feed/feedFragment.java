@@ -33,7 +33,7 @@ public class feedFragment extends Fragment {
         items.add("Mishra ultimate topper");
         items.add("Mishra ultimate pro topper");
         items.add("Mishra infinity topper max");
-        recyclerView= recyclerView.findViewById(R.id.FeedRecycle);
+        recyclerView= root.findViewById(R.id.FeedRecycle);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);

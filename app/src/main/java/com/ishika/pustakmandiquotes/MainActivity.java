@@ -3,6 +3,9 @@ package com.ishika.pustakmandiquotes;
         import androidx.annotation.NonNull;
         import androidx.appcompat.app.AppCompatActivity;
         import androidx.fragment.app.Fragment;
+        import androidx.recyclerview.widget.LinearLayoutManager;
+        import androidx.recyclerview.widget.RecyclerView;
+
         import android.os.Bundle;
         import android.view.MenuItem;
         import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -11,6 +14,8 @@ package com.ishika.pustakmandiquotes;
         import com.ishika.pustakmandiquotes.ui.bookmark.bookmarkFragment;
         import com.ishika.pustakmandiquotes.ui.feed.feedFragment;
         import com.ishika.pustakmandiquotes.ui.home.homeFragment;
+
+        import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -22,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         //getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.bnavigation);
         navigation.setOnNavigationItemSelectedListener(this);
-
     }
 
     private boolean loadFragment (Fragment fragment){
