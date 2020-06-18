@@ -1,4 +1,4 @@
-package com.ishika.pustakmandiquotes.ui.feed;
+package com.ishika.pustakmandiquotes.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.ishika.pustakmandiquotes.R;
 
-public class feedFragment extends Fragment {
+public class homeFragment extends Fragment {
 
-    private feedViewModel feedViewModel;
+    private homeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        feedViewModel =
-                ViewModelProviders.of(this).get(feedViewModel.class);
-        View root = inflater.inflate(R.layout.feedfrag, container, false);
-        final TextView textView = root.findViewById(R.id.feedsc);
-        feedViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+       homeViewModel =
+                ViewModelProviders.of(this).get(homeViewModel.class);
+        View root = inflater.inflate(R.layout.homefrag, container, false);
+        final TextView textView = root.findViewById(R.id.homesc);
+        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
