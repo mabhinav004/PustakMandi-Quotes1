@@ -22,6 +22,7 @@ public class mainpage extends AppCompatActivity implements BottomNavigationView.
         //getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.bnavigation);
         navigation.setOnNavigationItemSelectedListener(this);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new feedFragment()).commit();
 
     }
 
@@ -50,7 +51,7 @@ public class mainpage extends AppCompatActivity implements BottomNavigationView.
                 fragment = new searchFragment();
                 break;
 
-            case R.id.text_add:
+            case R.id.navigation_add:
                 fragment = new addFragment();
                 break;
 
