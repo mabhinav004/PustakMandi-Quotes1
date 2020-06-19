@@ -11,10 +11,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.ishika.pustakmandiquotes.R;
 
+import java.util.ArrayList;
+
 public class bookmarkFragment extends Fragment {
+
+    private bookmarkViewmodel bookmarkViewmodel;
+    RecyclerView recyclerView;
+    bookAdapter adapter;
+    ArrayList<String> items;
 
     private com.ishika.pustakmandiquotes.ui.bookmark.bookmarkViewmodel notificationsViewModel;
 
@@ -23,13 +31,12 @@ public class bookmarkFragment extends Fragment {
         notificationsViewModel =
                 ViewModelProviders.of(this).get(com.ishika.pustakmandiquotes.ui.bookmark.bookmarkViewmodel.class);
         View root = inflater.inflate(R.layout.bookmarkfrag, container, false);
-        final TextView textView = root.findViewById(R.id.bookmarksc);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+        recyclerView= root.findViewById(R.id.bookmarkscreen);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+
         return root;
     }
 }
