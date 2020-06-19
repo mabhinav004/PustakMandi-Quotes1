@@ -16,20 +16,14 @@ import com.ishika.pustakmandiquotes.R;
 
 public class addFragment extends Fragment {
 
-    private com.ishika.pustakmandiquotes.ui.add.addViewModel notificationsViewModel;
+    private com.ishika.pustakmandiquotes.ui.add.addViewModel addViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
+        addViewModel =
                 ViewModelProviders.of(this).get(com.ishika.pustakmandiquotes.ui.add.addViewModel.class);
         View root = inflater.inflate(R.layout.addfrag, container, false);
-        final TextView textView = root.findViewById(R.id.text_add);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }
