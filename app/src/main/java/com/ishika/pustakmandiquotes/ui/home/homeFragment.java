@@ -23,11 +23,11 @@ public class homeFragment extends Fragment {
        homeViewModel =
                 ViewModelProviders.of(this).get(homeViewModel.class);
         View root = inflater.inflate(R.layout.homefrag, container, false);
-        final TextView textView = root.findViewById(R.id.homesc);
+        //final TextView textView = root.findViewById(R.id.homesc);
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+           //     textView.setText(s);
             }
         });
         return root;
