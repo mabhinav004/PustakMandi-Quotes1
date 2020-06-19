@@ -1,6 +1,6 @@
 package com.ishika.pustakmandiquotes;
 
-        import androidx.annotation.NonNull;
+import androidx.annotation.NonNull;
         import androidx.appcompat.app.AppCompatActivity;
         import androidx.fragment.app.Fragment;
         import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         //getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.bnavigation);
         navigation.setOnNavigationItemSelectedListener(this);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new feedFragment()).commit();
     }
 
     private boolean loadFragment (Fragment fragment){
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new searchFragment();
                 break;
 
-            case R.id.text_add:
+            case R.id.navigation_add:
                 fragment = new addFragment();
                 break;
 
